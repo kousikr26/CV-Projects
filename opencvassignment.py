@@ -30,7 +30,8 @@ for c in cnts:
     cv2.drawContours(redimage, [c], -1, (0, 255, 0), 2)
     cv2.putText(redimage, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 cv2.imwrite(os.path.join(path , 'red.jpg'), redimage)
-cv2.imshow("red",redimage)
+cv2.imshow("image",image)
+cv2.imshow("Red Coloured Objects",redimage)
 k=cv2.waitKey(0)
 
 image=cv2.imread("45.png")
@@ -39,7 +40,7 @@ upper_green = np.array([86,255,255])
 greenmask = cv2.inRange(hsvimage, lower_green, upper_green)
 greenmask=cv2.erode(greenmask,kernel,iterations=1)
 greenimage=cv2.bitwise_and(image,image,mask=greenmask)
-image,cnts,hierarchy = cv2.findContours(greenmask, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+image2,cnts,hierarchy = cv2.findContours(greenmask, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
 for c in cnts:
     peri = cv2.arcLength(c, True)
@@ -58,7 +59,9 @@ for c in cnts:
     cv2.drawContours(greenimage, [c], -1, (0, 255, 0), 2)
     cv2.putText(greenimage, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 cv2.imwrite(os.path.join(path , 'green.jpg'), greenimage)
-cv2.imshow("green",greenimage)
+cv2.imshow("image",image)
+
+cv2.imshow("Green Coloured Objects",greenimage)
 k=cv2.waitKey(0)
 
 image=cv2.imread("45.png")
@@ -86,7 +89,9 @@ for c in cnts:
     cv2.drawContours(blueimage, [c], -1, (0, 255, 0), 2)
     cv2.putText(blueimage, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 cv2.imwrite(os.path.join(path , 'blue.jpg'), blueimage)
-cv2.imshow("blue",blueimage)
+cv2.imshow("image",image)
+
+cv2.imshow("Blue Coloured Objects",blueimage)
 k=cv2.waitKey(0)
 
 image=cv2.imread("45.png")
@@ -114,7 +119,9 @@ for c in cnts:
     cv2.drawContours(yellowimage, [c], -1, (0, 255, 0), 2)
     cv2.putText(yellowimage, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 cv2.imwrite(os.path.join(path , 'yellow.jpg'), yellowimage)
-cv2.imshow("yellow",yellowimage)
+cv2.imshow("image",image)
+
+cv2.imshow("Yellow Coloured Objects",yellowimage)
 k=cv2.waitKey(0)
 
 
@@ -143,5 +150,7 @@ for c in cnts:
     cv2.drawContours(orangeimage, [c], -1, (0, 255, 0), 2)
     cv2.putText(orangeimage, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 cv2.imwrite(os.path.join(path , 'orange.jpg'), orangeimage)
-cv2.imshow("orange",orangeimage)
+cv2.imshow("image",image)
+
+cv2.imshow("Orange Coloured Objects",orangeimage)
 k=cv2.waitKey(0)
