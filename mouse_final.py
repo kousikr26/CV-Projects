@@ -1,3 +1,5 @@
+"""Control your computer mouse by holding and moving any red coloured object"""
+
 import cv2
 import numpy as np
 import pymouse
