@@ -1,3 +1,5 @@
+"""Classifies objects based on shape and color"""
+
 import cv2
 import numpy as np
 import os
